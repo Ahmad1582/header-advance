@@ -49,9 +49,11 @@ li {
 .section-nav nav li a:hover {
     color: rgb(124, 30, 218);
 }
-img{
+
+img {
     width: 100%;
 }
+
 .section-nav nav li a.active {
     background-image: linear-gradient(120deg, rgb(179, 179, 209), rgb(102, 98, 98));
     color: rgb(255, 255, 255);
@@ -68,29 +70,182 @@ img{
     color: rgb(236, 236, 236);
 }
 
-.sectin-content{
+.section-content {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     max-width: 1200px;
     margin: auto;
     gap: 5rem;
+    min-height: calc(100vh - 100px);
 }
-.rigth-content img{
+
+.rigth-content img {
     max-width: 300px;
-    border-radius:10px;
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    -ms-border-radius:10px;
-    -o-border-radius:10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
-.rigth-content{
+
+.rigth-content img:nth-child(2) {
+    transform: translateY(-35PX);
+    -webkit-transform: translateY(-35PX);
+    -moz-transform: translateY(-35PX);
+    -ms-transform: translateY(-35PX);
+    -o-transform: translateY(-35PX);
+}
+
+.rigth-content {
     display: grid;
-    grid-template-columns: repeat(2,1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    place-content: center;
+    position: relative;
+}
+
+.rigth-content .content-text {
+    background: linear-gradient(to right, rgba(92, 72, 238, 0.6), rgba(15, 30, 106, 0.4));
+    backdrop-filter: blur(30px);
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    max-width: 310px;
+    top: 55%;
+    left: 50%;
+    padding: 1.5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transform: translate(-35%, -50%);
+    -webkit-transform: translate(-35%, -50%);
+    -moz-transform: translate(-35%, -50%);
+    -ms-transform: translate(-35%, -50%);
+    -o-transform: translate(-35%, -50%);
+}
+
+.rigth-content .content-text ul li {
+    margin-bottom: 10px;
+    list-style: disc;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-content h1 {
+    font-size: 3rem;
+    width: 100%;
+    line-height: 3rem;
+}
+
+.left-content h1 span:nth-child(1) {
+    font-weight: 400;
+}
+
+.left-content h1 span:nth-child(3) {
+    font-weight: 700;
+    color: rgb(147, 76, 209);
+}
+
+.left-content h1 span:nth-child(5) {
+    font-weight: 700;
+    color: rgba(46, 38, 168, 0.788);
+}
+
+.left-content p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 1rem 0;
+    font-size: 1rem;
+    counter-reset: #333333;
+}
+
+.left-content form {
+    display: flex;
+    align-items: center;
+}
+
+.left-content form input {
+    border: none;
+    font-size: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.left-content form button {
+    border: none;
+    font-size: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 1rem;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(76, 3, 145, 0.788);
 }
 
 
+@media screen and (max-width:999px) {
+    .section-nav {
+        display: none;
+    }
 
+    .section-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
+    .left-content {
+        text-align: center;
+    }
 
+    .left-content p {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 300px;
+        text-align: left;
+    }
 
+    .left-content form {
+        justify-content: center;
+        width: 100%;
+
+    }
+    .left-content form input{
+        width: 370px;
+        height: 40px;
+        font-size: 13px;
+    }
+    .left-content form button{
+        width: 130px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .rigth-content {
+        display: flex;
+        gap: 70px;
+    }
+
+    .rigth-content img:nth-child(2) {
+        transform: translate(35);
+        -webkit-transform: translate(35);
+        -moz-transform: translate(35);
+        -ms-transform: translate(35);
+        -o-transform: translate(35);
+    }
+}
+@media screen and (max-width:685px) {
+    .rigth-content {
+        display: flex;
+        gap: 30px;
+    }
+}
